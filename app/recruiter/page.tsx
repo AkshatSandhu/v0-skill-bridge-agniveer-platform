@@ -13,6 +13,7 @@ import {
   ArrowRight, CheckCircle, Star, Zap, Target, BookOpen, Home, LogOut, FileText, Calendar
 } from 'lucide-react';
 
+// PRIVATE SECTOR JOBS
 const PRIVATE_SECTOR_JOBS = [
   {
     id: 1,
@@ -27,8 +28,7 @@ const PRIVATE_SECTOR_JOBS = [
     description: 'Lead security operations team, manage 50+ personnel',
     urgency: 'High',
     postedDate: '2 days ago',
-    sector: 'Private',
-    availability: 'Open'
+    sector: 'Private'
   },
   {
     id: 2,
@@ -43,8 +43,7 @@ const PRIVATE_SECTOR_JOBS = [
     description: 'Manage enterprise network infrastructure, ensure 99.9% uptime',
     urgency: 'Medium',
     postedDate: '5 days ago',
-    sector: 'Private',
-    availability: 'Open'
+    sector: 'Private'
   },
   {
     id: 3,
@@ -59,8 +58,7 @@ const PRIVATE_SECTOR_JOBS = [
     description: 'Oversee logistics operations across 10 cities, optimize efficiency',
     urgency: 'High',
     postedDate: '1 day ago',
-    sector: 'Private',
-    availability: 'Open'
+    sector: 'Private'
   },
   {
     id: 4,
@@ -75,8 +73,7 @@ const PRIVATE_SECTOR_JOBS = [
     description: 'Lead infrastructure projects worth ₹50+ crores',
     urgency: 'High',
     postedDate: '3 days ago',
-    sector: 'Private',
-    availability: 'Open'
+    sector: 'Private'
   },
   {
     id: 5,
@@ -91,373 +88,476 @@ const PRIVATE_SECTOR_JOBS = [
     description: 'Manage hospital operations, coordinate with medical teams',
     urgency: 'Medium',
     postedDate: '4 days ago',
-    sector: 'Private',
-    availability: 'Open'
+    sector: 'Private'
   },
   {
     id: 6,
     title: 'Government Affairs Officer',
     company: 'GovernanceIQ Solutions',
     location: 'New Delhi',
-    salary: '₹50,000 - ₹70,000/month',
+    salary: '₹52,000 - ₹70,000/month',
     type: 'Full-time',
-    experience: '2-4 years',
-    requiredSkills: ['Administration', 'Policy Knowledge', 'Documentation'],
-    idealRole: 'Infantry',
-    description: 'Interface with government agencies, manage compliance',
+    experience: '2-3 years',
+    requiredSkills: ['Policy Analysis', 'Stakeholder Management', 'Documentation'],
+    idealRole: 'Signals',
+    description: 'Liaison between government and corporate sectors',
     urgency: 'Medium',
-    postedDate: '1 week ago',
-    sector: 'Private',
-    availability: 'Open'
+    postedDate: '6 days ago',
+    sector: 'Private'
   },
   {
     id: 7,
-    title: 'IT Systems Administrator',
-    company: 'TechCorp India',
+    title: 'Training & Development Coordinator',
+    company: 'LearnPro Academy',
     location: 'Bangalore',
-    salary: '₹40,000 - ₹55,000/month',
+    salary: '₹45,000 - ₹60,000/month',
     type: 'Full-time',
     experience: '1-3 years',
-    requiredSkills: ['System Administration', 'IT Support', 'Network Administration'],
-    idealRole: 'Signals',
-    description: 'Manage IT infrastructure, user support, system security',
-    urgency: 'Medium',
-    postedDate: '6 days ago',
-    sector: 'Private',
-    availability: 'Open'
+    requiredSkills: ['Training Delivery', 'Curriculum Design', 'Team Building'],
+    idealRole: 'Infantry',
+    description: 'Develop and deliver training programs for corporate teams',
+    urgency: 'Low',
+    postedDate: '7 days ago',
+    sector: 'Private'
   },
   {
     id: 8,
-    title: 'Warehouse Operations Specialist',
-    company: 'LogisticsPro Network',
-    location: 'Mumbai',
-    salary: '₹35,000 - ₹50,000/month',
+    title: 'Quality Assurance Officer',
+    company: 'ManufactureEx Ltd',
+    location: 'Chennai',
+    salary: '₹50,000 - ₹68,000/month',
     type: 'Full-time',
-    experience: '1-2 years',
-    requiredSkills: ['Inventory Management', 'Logistics', 'Operations'],
-    idealRole: 'Logistics',
-    description: 'Optimize warehouse operations, manage inventory',
-    urgency: 'Low',
-    postedDate: '1 week ago',
-    sector: 'Private',
-    availability: 'Open'
+    experience: '2-4 years',
+    requiredSkills: ['Quality Control', 'Process Improvement', 'ISO Standards'],
+    idealRole: 'Engineering Support',
+    description: 'Ensure product quality and standards compliance',
+    urgency: 'Medium',
+    postedDate: '3 days ago',
+    sector: 'Private'
   }
 ];
 
-const GOVERNMENT_JOBS = [
+// PUBLIC SECTOR UNDERTAKINGS (PSU) JOBS
+const PSU_JOBS = [
   {
     id: 101,
-    title: 'Assistant Commandant (AC) - Border Security Force',
-    company: 'Border Security Force (BSF)',
-    location: 'Pan India',
-    salary: '₹56,100 - ₹177,500/month',
-    type: 'Permanent',
-    experience: '0-2 years',
-    requiredSkills: ['Leadership', 'Physical Fitness', 'Decision Making'],
-    idealRole: 'Infantry',
-    description: 'Lead BSF operations at border, manage personnel, counter-terrorism duties',
+    title: 'Junior Management Trainee (JMT)',
+    company: 'NTPC (National Thermal Power Corporation)',
+    location: 'Delhi',
+    salary: '₹40,000 - ₹55,000/month',
+    type: 'Full-time',
+    experience: '0-1 years',
+    requiredSkills: ['Problem Solving', 'Team Work', 'Technical Aptitude'],
+    idealRole: 'Engineering Support',
+    description: 'Trainee position for management careers in power sector',
     urgency: 'High',
-    postedDate: '3 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'UPSC (Union Public Service Commission)',
-    examDate: 'June 2026',
-    eligibility: 'Bachelor\'s degree, 21-30 years old',
-    syllabus: ['General Studies', 'Optional Subject', 'Interview'],
-    applicationDeadline: '15-April-2026'
+    postedDate: '10 days ago',
+    sector: 'PSU',
+    lastApplyDate: '31st March 2025'
   },
   {
     id: 102,
-    title: 'Central Armed Police Forces (CAPF) Officer',
-    company: 'CAPF (CRPF/CISF/BSF/SSB)',
-    location: 'Pan India',
-    salary: '₹44,900 - ₹142,400/month',
-    type: 'Permanent',
-    experience: '0-2 years',
-    requiredSkills: ['Discipline', 'Physical Endurance', 'Problem Solving'],
-    idealRole: 'Infantry',
-    description: 'Serve in paramilitary forces, handle internal security, counter-terrorism',
+    title: 'Executive Officer Grade A',
+    company: 'SAIL (Steel Authority of India Limited)',
+    location: 'Kolkata',
+    salary: '₹50,000 - ₹70,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Operations Management', 'Technical Knowledge', 'Leadership'],
+    idealRole: 'Logistics',
+    description: 'Management position in steel manufacturing operations',
     urgency: 'High',
-    postedDate: '5 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'UPSC CAPF Exam (AC)',
-    examDate: 'August 2026',
-    eligibility: 'Bachelor\'s degree, 21-30 years old',
-    syllabus: ['General Ability', 'Physical Test', 'Interview'],
-    applicationDeadline: '20-May-2026'
+    postedDate: '8 days ago',
+    sector: 'PSU',
+    lastApplyDate: '15th April 2025'
   },
   {
     id: 103,
-    title: 'National Defence Academy (NDA) Officer',
-    company: 'Indian Armed Forces',
-    location: 'Pan India',
-    salary: '₹56,100 onwards/month',
-    type: 'Permanent (15 years service)',
-    experience: '0-1 years',
-    requiredSkills: ['Academic Excellence', 'Leadership', 'Physical Fitness'],
+    title: 'Security Officer - Grade B',
+    company: 'BHEL (Bharat Heavy Electricals Limited)',
+    location: 'Bangalore',
+    salary: '₹38,000 - ₹52,000/month',
+    type: 'Full-time',
+    experience: '2-3 years',
+    requiredSkills: ['Security Management', 'Emergency Response', 'Team Leadership'],
     idealRole: 'Infantry',
-    description: 'Three-year training at NDA, followed by commission in Army/Navy/Air Force',
-    urgency: 'High',
-    postedDate: '1 week ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'UPSC NDA Exam',
-    examDate: 'April 2026 & September 2026',
-    eligibility: '12th pass, 16-19 years old',
-    syllabus: ['Mathematics', 'General Ability', 'Physical Test'],
-    applicationDeadline: '25-February-2026'
+    description: 'Security and safety operations in manufacturing facilities',
+    urgency: 'Medium',
+    postedDate: '5 days ago',
+    sector: 'PSU',
+    lastApplyDate: '30th March 2025'
   },
   {
     id: 104,
-    title: 'Combined Defence Services (CDS) Officer',
-    company: 'Indian Armed Forces',
-    location: 'Pan India',
-    salary: '₹56,100 - ₹177,500/month',
-    type: 'Permanent',
-    experience: '0-3 years',
-    requiredSkills: ['Leadership', 'Strategic Thinking', 'Command Skills'],
-    idealRole: 'Infantry',
-    description: 'Commission in Army/Navy/Air Force through CDS exam, lead military operations',
+    title: 'Technical Officer - IT',
+    company: 'GAIL (Gas Authority of India Limited)',
+    location: 'New Delhi',
+    salary: '₹48,000 - ₹65,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['IT Systems', 'Network Management', 'Data Security'],
+    idealRole: 'Signals',
+    description: 'IT infrastructure management for national gas distribution',
     urgency: 'High',
-    postedDate: '4 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'UPSC CDS Exam',
-    examDate: 'May 2026 & November 2026',
-    eligibility: 'Bachelor\'s degree, 21-28 years old',
-    syllabus: ['English', 'General Knowledge', 'Elementary Mathematics'],
-    applicationDeadline: '01-March-2026'
+    postedDate: '3 days ago',
+    sector: 'PSU',
+    lastApplyDate: '20th March 2025'
   },
   {
     id: 105,
-    title: 'SSC-CGL (Tier-2) - Administrative Officer',
-    company: 'Ministry of Defence & Other Govt Departments',
-    location: 'Pan India',
-    salary: '₹35,400 - ₹112,400/month',
+    title: 'Medical Officer - Grade A',
+    company: 'Indian Oil Corporation Limited (IOCL)',
+    location: 'Mumbai',
+    salary: '₹55,000 - ₹75,000/month',
     type: 'Full-time',
-    experience: '0-2 years',
-    requiredSkills: ['Administration', 'Data Handling', 'Report Writing'],
-    idealRole: 'Logistics',
-    description: 'Administrative officer in government agencies, manage files and operations',
+    experience: '3-5 years',
+    requiredSkills: ['Occupational Health', 'Emergency Medicine', 'Team Management'],
+    idealRole: 'Medical Support',
+    description: 'Healthcare management in oil refinery operations',
     urgency: 'Medium',
-    postedDate: '1 week ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'Staff Selection Commission (SSC-CGL)',
-    examDate: 'Tier-1: December 2025 (Already Done), Tier-2: March-April 2026',
-    eligibility: '12th pass minimum, 18-27 years old',
-    syllabus: ['Quantitative Aptitude', 'English', 'Reasoning', 'General Knowledge'],
-    applicationDeadline: 'Ongoing'
+    postedDate: '6 days ago',
+    sector: 'PSU',
+    lastApplyDate: '25th March 2025'
   },
   {
     id: 106,
-    title: 'Railway Protection Force (RPF) Constable',
-    company: 'Ministry of Railways',
-    location: 'Pan India (Railway Stations)',
-    salary: '₹21,700 - ₹69,100/month',
+    title: 'Operations Technician',
+    company: 'Power Grid Corporation of India (PGCIL)',
+    location: 'Chennai',
+    salary: '₹36,000 - ₹50,000/month',
     type: 'Full-time',
-    experience: '0-1 years',
-    requiredSkills: ['Vigilance', 'Physical Strength', 'Problem Solving'],
-    idealRole: 'Infantry',
-    description: 'Provide security at railway stations and trains, prevent crime',
+    experience: '1-2 years',
+    requiredSkills: ['Electrical Knowledge', 'Systems Operation', 'Safety Protocols'],
+    idealRole: 'Engineering Support',
+    description: 'Power grid operation and maintenance',
     urgency: 'High',
     postedDate: '2 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'RRB/Railway Board Exam',
-    examDate: 'May 2026',
-    eligibility: '10th/12th pass, 18-25 years old',
-    syllabus: ['General Knowledge', 'Arithmetic', 'Reasoning'],
-    applicationDeadline: '10-March-2026'
-  },
-  {
-    id: 107,
-    title: 'Defence Research & Development Organisation (DRDO) Scientist',
-    company: 'Ministry of Defence - DRDO',
-    location: 'Various DRDO Centers (Delhi, Bangalore, Pune)',
-    salary: '₹56,100 - ₹177,500/month',
-    type: 'Full-time',
-    experience: '0-3 years',
-    requiredSkills: ['Research', 'Engineering', 'Technical Knowledge'],
-    idealRole: 'Engineering Support',
-    description: 'Work on defence research projects, develop military technologies',
-    urgency: 'Medium',
-    postedDate: '6 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'DRDO Scientist Entry Test',
-    examDate: 'Ongoing (Recruitment Notification)',
-    eligibility: 'B.E/B.Tech/M.Tech in Engineering',
-    syllabus: ['Engineering Core Subjects', 'Technical Knowledge', 'General Awareness'],
-    applicationDeadline: 'Varies per notification'
-  },
-  {
-    id: 108,
-    title: 'Intelligence Bureau (IB) Recruitment - Grade-II Officer',
-    company: 'Ministry of Home Affairs - IB',
-    location: 'Pan India',
-    salary: '₹50,000 - ₹160,000/month',
-    type: 'Permanent',
-    experience: '0-2 years',
-    requiredSkills: ['Analytical Thinking', 'Surveillance', 'Intelligence'],
-    idealRole: 'Signals',
-    description: 'Work in intelligence gathering, national security, counter-terrorism',
-    urgency: 'High',
-    postedDate: '3 days ago',
-    sector: 'Government',
-    availability: 'Open',
-    exam: 'UPSC Intelligence Bureau Exam',
-    examDate: 'June 2026',
-    eligibility: 'Bachelor\'s degree, 21-27 years old, Medical & Psychological fitness',
-    syllabus: ['General Studies', 'Interview', 'Physical Test'],
-    applicationDeadline: '15-April-2026'
+    sector: 'PSU',
+    lastApplyDate: '10th April 2025'
   }
 ];
 
-const ALL_JOBS = [...PRIVATE_SECTOR_JOBS, ...GOVERNMENT_JOBS];
+// PUBLIC-PRIVATE PARTNERSHIP (PPP) JOBS
+const PPP_JOBS = [
+  {
+    id: 201,
+    title: 'Project Operations Manager',
+    company: 'Delhi Metro Rail Corporation (DMRC) - PPP Division',
+    location: 'Delhi',
+    salary: '₹58,000 - ₹80,000/month',
+    type: 'Full-time',
+    experience: '3-5 years',
+    requiredSkills: ['Project Management', 'Operations', 'Stakeholder Management'],
+    idealRole: 'Logistics',
+    description: 'Manage metro operations in PPP model infrastructure projects',
+    urgency: 'High',
+    postedDate: '4 days ago',
+    sector: 'PPP',
+    lastApplyDate: '28th March 2025'
+  },
+  {
+    id: 202,
+    title: 'Toll Management Officer',
+    company: 'National Highway Authority of India (NHAI) - PPP',
+    location: 'Pune',
+    salary: '₹45,000 - ₹62,000/month',
+    type: 'Full-time',
+    experience: '2-3 years',
+    requiredSkills: ['Revenue Management', 'Operations', 'Customer Service'],
+    idealRole: 'Signals',
+    description: 'Toll collection and management in PPP highway projects',
+    urgency: 'Medium',
+    postedDate: '7 days ago',
+    sector: 'PPP',
+    lastApplyDate: '22nd March 2025'
+  },
+  {
+    id: 203,
+    title: 'Safety & Security Manager',
+    company: 'Airport Authority of India (AAI) - PPP Terminal',
+    location: 'Bangalore',
+    salary: '₹62,000 - ₹85,000/month',
+    type: 'Full-time',
+    experience: '3-5 years',
+    requiredSkills: ['Security Management', 'Risk Assessment', 'Team Leadership'],
+    idealRole: 'Infantry',
+    description: 'Safety and security operations in PPP airport terminals',
+    urgency: 'High',
+    postedDate: '2 days ago',
+    sector: 'PPP',
+    lastApplyDate: '18th April 2025'
+  },
+  {
+    id: 204,
+    title: 'Clinical Operations Manager',
+    company: 'Ministry of Health - PPP Hospital Initiative',
+    location: 'Hyderabad',
+    salary: '₹52,000 - ₹70,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Healthcare Management', 'Operations', 'Compliance'],
+    idealRole: 'Medical Support',
+    description: 'Hospital operations in public-private healthcare partnerships',
+    urgency: 'High',
+    postedDate: '1 day ago',
+    sector: 'PPP',
+    lastApplyDate: '30th April 2025'
+  },
+  {
+    id: 205,
+    title: 'Water Management Officer',
+    company: 'Water Supply Board - PPP Project',
+    location: 'Jaipur',
+    salary: '₹40,000 - ₹58,000/month',
+    type: 'Full-time',
+    experience: '2-3 years',
+    requiredSkills: ['Water Treatment', 'Operations', 'Environmental Compliance'],
+    idealRole: 'Engineering Support',
+    description: 'Water supply operations in PPP model infrastructure',
+    urgency: 'Medium',
+    postedDate: '5 days ago',
+    sector: 'PPP',
+    lastApplyDate: '15th April 2025'
+  },
+  {
+    id: 206,
+    title: 'Maintenance Supervisor',
+    company: 'Railway Board - PPP Maintenance Services',
+    location: 'Mumbai',
+    salary: '₹44,000 - ₹60,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Maintenance Management', 'Technical Skills', 'Quality Control'],
+    idealRole: 'Logistics',
+    description: 'Rail infrastructure maintenance in PPP contracts',
+    urgency: 'Medium',
+    postedDate: '4 days ago',
+    sector: 'PPP',
+    lastApplyDate: '25th March 2025'
+  }
+];
+
+// JOINT SECTOR UNDERTAKINGS (JSU) JOBS
+const JSU_JOBS = [
+  {
+    id: 301,
+    title: 'Supervisory Officer - Manufacturing',
+    company: 'Vedanta Limited - Government JV',
+    location: 'Chhattisgarh',
+    salary: '₹50,000 - ₹68,000/month',
+    type: 'Full-time',
+    experience: '3-4 years',
+    requiredSkills: ['Operations Supervision', 'Production Management', 'Safety'],
+    idealRole: 'Engineering Support',
+    description: 'Supervision of joint venture mining and manufacturing',
+    urgency: 'High',
+    postedDate: '3 days ago',
+    sector: 'JSU',
+    lastApplyDate: '20th April 2025'
+  },
+  {
+    id: 302,
+    title: 'Field Operations Executive',
+    company: 'ONGC-Rosneft Joint Venture',
+    location: 'Mumbai',
+    salary: '₹55,000 - ₹75,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Oil & Gas Operations', 'Field Management', 'Technical Expertise'],
+    idealRole: 'Logistics',
+    description: 'Operations management in oil and gas joint ventures',
+    urgency: 'High',
+    postedDate: '1 day ago',
+    sector: 'JSU',
+    lastApplyDate: '10th May 2025'
+  },
+  {
+    id: 303,
+    title: 'Safety & Compliance Officer',
+    company: 'Coal India Limited - Government JV',
+    location: 'Kolkata',
+    salary: '₹48,000 - ₹65,000/month',
+    type: 'Full-time',
+    experience: '2-3 years',
+    requiredSkills: ['Safety Management', 'Compliance', 'Risk Assessment'],
+    idealRole: 'Infantry',
+    description: 'Safety operations in joint sector coal mining ventures',
+    urgency: 'High',
+    postedDate: '5 days ago',
+    sector: 'JSU',
+    lastApplyDate: '28th March 2025'
+  },
+  {
+    id: 304,
+    title: 'Technical Operations Manager',
+    company: 'Hindustan Zinc Limited - JV Division',
+    location: 'Udaipur',
+    salary: '₹58,000 - ₹78,000/month',
+    type: 'Full-time',
+    experience: '3-5 years',
+    requiredSkills: ['Technical Management', 'Production Operations', 'Quality'],
+    idealRole: 'Engineering Support',
+    description: 'Technical operations in joint venture mining operations',
+    urgency: 'Medium',
+    postedDate: '6 days ago',
+    sector: 'JSU',
+    lastApplyDate: '15th April 2025'
+  },
+  {
+    id: 305,
+    title: 'Health & Wellness Manager',
+    company: 'JSW Steel - Government Partnership',
+    location: 'Karnataka',
+    salary: '₹52,000 - ₹70,000/month',
+    type: 'Full-time',
+    experience: '2-3 years',
+    requiredSkills: ['Occupational Health', 'Wellness Programs', 'Team Leadership'],
+    idealRole: 'Medical Support',
+    description: 'Health and wellness management in JSU steel operations',
+    urgency: 'Medium',
+    postedDate: '4 days ago',
+    sector: 'JSU',
+    lastApplyDate: '25th April 2025'
+  },
+  {
+    id: 306,
+    title: 'Infrastructure Operations Officer',
+    company: 'Adani Ports - Government JV',
+    location: 'Ahmedabad',
+    salary: '₹54,000 - ₹72,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Port Operations', 'Logistics', 'Operations Management'],
+    idealRole: 'Logistics',
+    description: 'Port operations in government-private joint ventures',
+    urgency: 'High',
+    postedDate: '2 days ago',
+    sector: 'JSU',
+    lastApplyDate: '8th May 2025'
+  }
+];
 
 export default function RecruiterPage() {
-  const [activeTab, setActiveTab] = useState('jobs');
-  const [selectedJob, setSelectedJob] = useState<typeof ALL_JOBS[0] | null>(ALL_JOBS[0]);
-  const [jobSearch, setJobSearch] = useState('');
-  const [filterRole, setFilterRole] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterSector, setFilterSector] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
   const [filterSalary, setFilterSalary] = useState('');
-  const [filterSector, setFilterSector] = useState('');
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [activeTab, setActiveTab] = useState('jobs');
 
-  const filteredJobs = ALL_JOBS.filter(job => {
-    const searchMatch = job.title.toLowerCase().includes(jobSearch.toLowerCase()) ||
-                       job.company.toLowerCase().includes(jobSearch.toLowerCase());
-    const roleMatch = !filterRole || job.idealRole === filterRole;
-    const locationMatch = !filterLocation || job.location === filterLocation;
-    const sectorMatch = !filterSector || job.sector === filterSector;
-    const salaryMatch = !filterSalary || (
-      filterSalary === 'high' && parseInt(job.salary.split('-')[1].replace(/[₹,]/g, '')) >= 75000
-    ) || (
-      filterSalary === 'medium' && parseInt(job.salary.split('-')[1].replace(/[₹,]/g, '')) >= 55000 && 
-      parseInt(job.salary.split('-')[1].replace(/[₹,]/g, '')) < 75000
-    ) || (
-      filterSalary === 'low' && parseInt(job.salary.split('-')[1].replace(/[₹,]/g, '')) < 55000
-    );
-    return searchMatch && roleMatch && locationMatch && sectorMatch && salaryMatch;
+  // Combine all jobs
+  const allJobs = [...PRIVATE_SECTOR_JOBS, ...PSU_JOBS, ...PPP_JOBS, ...JSU_JOBS];
+
+  // Filter jobs
+  const filteredJobs = allJobs.filter(job => {
+    const matchSearch = job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                       job.company.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchSector = !filterSector || job.sector === filterSector;
+    const matchLocation = !filterLocation || job.location === filterLocation;
+    
+    let matchSalary = true;
+    if (filterSalary) {
+      const salary = job.salary.toLowerCase();
+      if (filterSalary === 'high') matchSalary = salary.includes('75000') || salary.includes('90000') || salary.includes('80000') || salary.includes('85000');
+      if (filterSalary === 'medium') matchSalary = salary.includes('55000') || salary.includes('65000') || salary.includes('70000') || salary.includes('60000');
+      if (filterSalary === 'low') matchSalary = salary.includes('40000') || salary.includes('45000') || salary.includes('50000') || salary.includes('38000');
+    }
+    
+    return matchSearch && matchSector && matchLocation && matchSalary;
   });
 
-  const getUrgencyColor = (urgency: string) => {
+  const getUrgencyColor = (urgency) => {
     switch(urgency) {
-      case 'High': return 'bg-red-900 text-red-100';
-      case 'Medium': return 'bg-yellow-900 text-yellow-100';
-      default: return 'bg-green-900 text-green-100';
+      case 'High': return 'bg-red-500/20 text-red-300 border-red-500/30';
+      case 'Medium': return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30';
+      default: return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
     }
   };
 
-  const getSectorColor = (sector: string) => {
-    return sector === 'Government' ? 'bg-blue-900 text-blue-100' : 'bg-purple-900 text-purple-100';
-  };
-
-  const getMatchPercentage = (job: typeof ALL_JOBS[0]) => {
-    const baseMatch = 75;
-    return baseMatch + Math.random() * 20;
+  const getSectorColor = (sector) => {
+    switch(sector) {
+      case 'Private': return 'bg-emerald-500/20 text-emerald-300';
+      case 'PSU': return 'bg-blue-500/20 text-blue-300';
+      case 'PPP': return 'bg-purple-500/20 text-purple-300';
+      case 'JSU': return 'bg-orange-500/20 text-orange-300';
+      default: return 'bg-slate-500/20 text-slate-300';
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      {/* Navigation */}
-      <nav className="border-b border-slate-700 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold flex items-center gap-2">
-            <Briefcase className="w-6 h-6 text-blue-500" />
-            SkillBridge Jobs
-          </Link>
-          <div className="flex gap-4">
-            <Link href="/dashboard">
-              <Button variant="ghost" className="text-white hover:bg-slate-700">
-                <Home className="w-4 h-4 mr-2" />
-                My Dashboard
-              </Button>
-            </Link>
-            <Link href="/">
-              <Button variant="ghost" className="text-white hover:bg-slate-700">
-                <LogOut className="w-4 h-4 mr-2" />
-                Home
-              </Button>
-            </Link>
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Header */}
+      <header className="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold text-blue-400">SkillBridge</h1>
+            <p className="text-sm text-slate-400">Career Opportunities</p>
           </div>
+          <Link href="/dashboard">
+            <Button className="bg-slate-700 text-white hover:bg-slate-600">
+              <Home className="w-4 h-4 mr-2" />
+              Dashboard
+            </Button>
+          </Link>
         </div>
-      </nav>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Browse Job Opportunities</h1>
-          <p className="text-slate-300">Find your perfect match from private and government sector employers across India</p>
-        </div>
-
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 bg-slate-800 border border-slate-700">
-            <TabsTrigger value="jobs" className="text-white data-[state=active]:bg-blue-600">
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="bg-slate-800 border-b border-slate-700 mb-6 w-full justify-start">
+            <TabsTrigger value="jobs" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
               <Briefcase className="w-4 h-4 mr-2" />
-              All Jobs
+              All Job Opportunities
             </TabsTrigger>
-            <TabsTrigger value="exams" className="text-white data-[state=active]:bg-blue-600">
-              <FileText className="w-4 h-4 mr-2" />
+            <TabsTrigger value="employers" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <Building2 className="w-4 h-4 mr-2" />
+              Employers
+            </TabsTrigger>
+            <TabsTrigger value="exams" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <BookOpen className="w-4 h-4 mr-2" />
               Exams & Tests
             </TabsTrigger>
-            <TabsTrigger value="guide" className="text-white data-[state=active]:bg-blue-600">
-              <BookOpen className="w-4 h-4 mr-2" />
-              Government Path
+            <TabsTrigger value="pathway" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+              <Target className="w-4 h-4 mr-2" />
+              Career Pathway
             </TabsTrigger>
           </TabsList>
 
-          {/* Jobs Tab */}
+          {/* All Jobs Tab */}
           <TabsContent value="jobs" className="space-y-6">
             {/* Filters */}
             <Card className="bg-slate-800 border-slate-700">
               <CardHeader>
-                <CardTitle className="text-white">Filter Opportunities</CardTitle>
+                <CardTitle className="text-white">Find Your Opportunity</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-6 gap-4">
-                  <div>
-                    <label className="text-sm text-slate-300 mb-2 block">Search Jobs</label>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-500" />
-                      <Input
-                        placeholder="Job title or company..."
-                        value={jobSearch}
-                        onChange={(e) => setJobSearch(e.target.value)}
-                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-500"
-                      />
-                    </div>
+              <CardContent className="space-y-4">
+                <div className="flex gap-2">
+                  <div className="flex-1">
+                    <Input
+                      placeholder="Search jobs, companies..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                    />
                   </div>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    <Search className="w-4 h-4" />
+                  </Button>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Sector</label>
                     <Select value={filterSector || "all-sectors"} onValueChange={(value) => setFilterSector(value === "all-sectors" ? "" : value)}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="All Sectors" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-slate-700 border-slate-600">
                         <SelectItem value="all-sectors">All Sectors</SelectItem>
-                        <SelectItem value="Private">Private</SelectItem>
-                        <SelectItem value="Government">Government</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <label className="text-sm text-slate-300 mb-2 block">Defence Role</label>
-                    <Select value={filterRole || "all-roles"} onValueChange={(value) => setFilterRole(value === "all-roles" ? "" : value)}>
-                      <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
-                        <SelectValue placeholder="All Roles" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all-roles">All Roles</SelectItem>
-                        <SelectItem value="Infantry">Infantry</SelectItem>
-                        <SelectItem value="Signals">Signals</SelectItem>
-                        <SelectItem value="Logistics">Logistics</SelectItem>
-                        <SelectItem value="Medical Support">Medical Support</SelectItem>
-                        <SelectItem value="Engineering Support">Engineering Support</SelectItem>
+                        <SelectItem value="Private">Private Sector</SelectItem>
+                        <SelectItem value="PSU">PSU (Public Sector Undertaking)</SelectItem>
+                        <SelectItem value="PPP">PPP (Public-Private Partnership)</SelectItem>
+                        <SelectItem value="JSU">JSU (Joint Sector Undertaking)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -466,17 +566,23 @@ export default function RecruiterPage() {
                     <label className="text-sm text-slate-300 mb-2 block">Location</label>
                     <Select value={filterLocation || "all-cities"} onValueChange={(value) => setFilterLocation(value === "all-cities" ? "" : value)}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
-                        <SelectValue placeholder="All Locations" />
+                        <SelectValue placeholder="All Cities" />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all-cities">All Locations</SelectItem>
+                      <SelectContent className="bg-slate-700 border-slate-600">
+                        <SelectItem value="all-cities">All Cities</SelectItem>
                         <SelectItem value="Delhi">Delhi</SelectItem>
+                        <SelectItem value="New Delhi">New Delhi</SelectItem>
                         <SelectItem value="Bangalore">Bangalore</SelectItem>
                         <SelectItem value="Mumbai">Mumbai</SelectItem>
                         <SelectItem value="Pune">Pune</SelectItem>
                         <SelectItem value="Chennai">Chennai</SelectItem>
-                        <SelectItem value="New Delhi">New Delhi</SelectItem>
-                        <SelectItem value="Pan India">Pan India</SelectItem>
+                        <SelectItem value="Kolkata">Kolkata</SelectItem>
+                        <SelectItem value="Hyderabad">Hyderabad</SelectItem>
+                        <SelectItem value="Jaipur">Jaipur</SelectItem>
+                        <SelectItem value="Chhattisgarh">Chhattisgarh</SelectItem>
+                        <SelectItem value="Udaipur">Udaipur</SelectItem>
+                        <SelectItem value="Ahmedabad">Ahmedabad</SelectItem>
+                        <SelectItem value="Karnataka">Karnataka</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -487,7 +593,7 @@ export default function RecruiterPage() {
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="Any" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-slate-700 border-slate-600">
                         <SelectItem value="any">Any</SelectItem>
                         <SelectItem value="high">₹75,000+ monthly</SelectItem>
                         <SelectItem value="medium">₹55,000 - ₹75,000</SelectItem>
@@ -496,417 +602,322 @@ export default function RecruiterPage() {
                     </Select>
                   </div>
 
-                  <Button onClick={() => {
-                    setJobSearch('');
-                    setFilterRole('');
-                    setFilterLocation('');
-                    setFilterSalary('');
-                    setFilterSector('');
-                  }} className="bg-slate-700 hover:bg-slate-600 mt-6">
-                    Clear Filters
-                  </Button>
+                  <div className="flex items-end">
+                    <Badge className="bg-blue-600">
+                      {filteredJobs.length} opportunities found
+                    </Badge>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
-            <div className="text-sm text-slate-400 mb-4">
-              Showing {filteredJobs.length} of {ALL_JOBS.length} opportunities
-            </div>
-
             {/* Jobs Grid */}
-            <div className="grid lg:grid-cols-3 gap-6">
-              {/* Job List */}
-              <div className="lg:col-span-1 space-y-3 max-h-[700px] overflow-y-auto">
-                {filteredJobs.length > 0 ? filteredJobs.map((job) => (
-                  <Card
-                    key={job.id}
-                    className={`cursor-pointer transition-all ${
-                      selectedJob?.id === job.id
-                        ? 'bg-blue-900 border-blue-500 shadow-lg shadow-blue-500/20'
-                        : 'bg-slate-800 border-slate-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10'
-                    }`}
-                    onClick={() => setSelectedJob(job)}
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-white line-clamp-2">{job.title}</h3>
-                          <p className="text-sm text-slate-300 mt-1">{job.company}</p>
-                          <div className="flex gap-2 mt-2 flex-wrap">
-                            <Badge className={getSectorColor(job.sector)}>
-                              {job.sector}
-                            </Badge>
+            {filteredJobs.length > 0 ? (
+              <div className="grid gap-4">
+                {filteredJobs.map(job => (
+                  <Card key={job.id} className="bg-slate-800 border-slate-700 hover:border-blue-500 transition cursor-pointer" onClick={() => setSelectedJob(job)}>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h3 className="text-lg font-semibold text-white">{job.title}</h3>
+                          <p className="text-slate-400">{job.company}</p>
+                        </div>
+                        <div className="flex gap-2">
+                          <Badge className={getSectorColor(job.sector)}>
+                            {job.sector}
+                          </Badge>
+                          {job.urgency && (
                             <Badge className={getUrgencyColor(job.urgency)}>
                               {job.urgency}
                             </Badge>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )) : (
-                  <Card className="bg-slate-800 border-slate-700">
-                    <CardContent className="p-6 text-center text-slate-400">
-                      No jobs match your filters. Try adjusting your search criteria.
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
-
-              {/* Job Details */}
-              <div className="lg:col-span-2">
-                {selectedJob ? (
-                  <Card className="bg-slate-800 border-slate-700 sticky top-24">
-                    <CardHeader>
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <Badge className={getSectorColor(selectedJob.sector)} className="mb-2">
-                            {selectedJob.sector}
-                          </Badge>
-                          <CardTitle className="text-2xl text-white mt-2">{selectedJob.title}</CardTitle>
-                          <CardDescription className="text-slate-300 mt-2">{selectedJob.company}</CardDescription>
-                          <div className="flex gap-3 mt-4 flex-wrap">
-                            <Badge variant="secondary" className="bg-slate-700">
-                              <MapPin className="w-3 h-3 mr-1" />
-                              {selectedJob.location}
-                            </Badge>
-                            <Badge variant="secondary" className="bg-slate-700">
-                              <IndianRupee className="w-3 h-3 mr-1" />
-                              {selectedJob.salary}
-                            </Badge>
-                            <Badge className={getUrgencyColor(selectedJob.urgency)}>
-                              {selectedJob.urgency} Priority
-                            </Badge>
-                          </div>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      {/* Job Info */}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-xs text-slate-400 uppercase">Experience</p>
-                          <p className="text-white font-semibold">{selectedJob.experience}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-400 uppercase">Job Type</p>
-                          <p className="text-white font-semibold">{selectedJob.type}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-400 uppercase">Ideal Background</p>
-                          <p className="text-white font-semibold">{selectedJob.idealRole}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-400 uppercase">Status</p>
-                          <p className="text-white font-semibold">{selectedJob.availability}</p>
+                          )}
                         </div>
                       </div>
 
-                      {/* Description */}
-                      <div>
-                        <h3 className="text-sm font-semibold text-white uppercase mb-2">Description</h3>
-                        <p className="text-slate-300">{selectedJob.description}</p>
-                      </div>
-
-                      {/* Skills */}
-                      <div>
-                        <h3 className="text-sm font-semibold text-white uppercase mb-2">Required Skills</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedJob.requiredSkills.map((skill, idx) => (
-                            <Badge key={idx} variant="outline" className="bg-blue-900/30 text-blue-200 border-blue-700">
-                              {skill}
-                            </Badge>
-                          ))}
+                      <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-300">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          {job.location}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <IndianRupee className="w-4 h-4" />
+                          {job.salary}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Briefcase className="w-4 h-4" />
+                          {job.experience}
                         </div>
                       </div>
 
-                      {/* Match Percentage */}
-                      <div className="bg-slate-700 p-4 rounded-lg">
-                        <p className="text-xs text-slate-400 uppercase">Your Match Score</p>
-                        <div className="flex items-center gap-3 mt-2">
-                          <div className="flex-1 bg-slate-600 rounded-full h-2">
-                            <div
-                              className="bg-green-500 h-2 rounded-full"
-                              style={{ width: `${getMatchPercentage(selectedJob)}%` }}
-                            />
-                          </div>
-                          <p className="text-white font-bold">{Math.round(getMatchPercentage(selectedJob))}%</p>
-                        </div>
+                      <p className="text-slate-400 text-sm mb-4">{job.description}</p>
+
+                      <div className="flex gap-2 flex-wrap mb-4">
+                        {job.requiredSkills.map(skill => (
+                          <Badge key={skill} className="bg-slate-700 text-slate-200 hover:bg-slate-600">{skill}</Badge>
+                        ))}
                       </div>
 
-                      {/* Government Job Exam Info */}
-                      {selectedJob.sector === 'Government' && (
-                        <div className="bg-blue-900/30 border border-blue-700 p-4 rounded-lg space-y-3">
-                          <h3 className="text-sm font-semibold text-blue-200 uppercase flex items-center gap-2">
-                            <FileText className="w-4 h-4" />
-                            Exam Information
-                          </h3>
-                          <div className="space-y-2 text-sm">
-                            <div>
-                              <p className="text-blue-300 font-semibold">{selectedJob.exam}</p>
-                              <p className="text-slate-300">Exam body for this position</p>
-                            </div>
-                            <div>
-                              <p className="text-slate-400">Exam Date:</p>
-                              <p className="text-blue-200 font-semibold flex items-center gap-2">
-                                <Calendar className="w-3 h-3" />
-                                {selectedJob.examDate}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-slate-400">Eligibility:</p>
-                              <p className="text-blue-200 font-semibold">{selectedJob.eligibility}</p>
-                            </div>
-                            <div>
-                              <p className="text-slate-400">Application Deadline:</p>
-                              <p className="text-red-300 font-semibold">{selectedJob.applicationDeadline}</p>
-                            </div>
-                            <div>
-                              <p className="text-slate-400">Exam Syllabus:</p>
-                              <div className="flex flex-wrap gap-1 mt-1">
-                                {selectedJob.syllabus.map((topic, idx) => (
-                                  <Badge key={idx} className="bg-blue-700 text-blue-100">{topic}</Badge>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-slate-500">{job.postedDate}</span>
+                        <Button className="bg-blue-600 hover:bg-blue-700 text-white" onClick={() => setSelectedJob(job)}>
+                          View Details <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
+
+                      {job.lastApplyDate && (
+                        <p className="text-xs text-yellow-400 mt-2">Apply by: {job.lastApplyDate}</p>
                       )}
-
-                      {/* Action Buttons */}
-                      <div className="flex gap-3 pt-4 border-t border-slate-700">
-                        <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
-                          <Briefcase className="w-4 h-4 mr-2" />
-                          Apply Now
-                        </Button>
-                        <Button variant="outline" className="border-slate-600 text-white hover:bg-slate-700">
-                          <Star className="w-4 h-4 mr-2" />
-                          Save Job
-                        </Button>
-                      </div>
                     </CardContent>
                   </Card>
-                ) : (
-                  <Card className="bg-slate-800 border-slate-700">
-                    <CardContent className="p-12 text-center">
-                      <p className="text-slate-400">Select a job to view details</p>
-                    </CardContent>
-                  </Card>
-                )}
+                ))}
               </div>
+            ) : (
+              <Card className="bg-slate-800 border-slate-700 p-8 text-center">
+                <p className="text-slate-400">No opportunities found matching your filters</p>
+              </Card>
+            )}
+          </TabsContent>
+
+          {/* Employers Tab */}
+          <TabsContent value="employers" className="space-y-6">
+            <div className="grid gap-4">
+              <Card className="bg-slate-800 border-slate-700">
+                <CardHeader>
+                  <CardTitle>Major Employers Hiring Agniveers</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {[
+                      { name: 'NTPC Limited', type: 'PSU - Power Sector', roles: 12, openings: 'JMT, Engineering, Operations' },
+                      { name: 'SAIL Limited', type: 'PSU - Steel Industry', roles: 8, openings: 'Executive, Technical, Security' },
+                      { name: 'IOCL', type: 'PSU - Oil & Gas', roles: 10, openings: 'Operations, Technical, Medical' },
+                      { name: 'Delhi Metro (PPP)', type: 'Public-Private Partnership', roles: 15, openings: 'Operations, Security, Management' },
+                      { name: 'ONGC-Rosneft (JSU)', type: 'Joint Sector Undertaking', roles: 6, openings: 'Field Operations, Technical' },
+                      { name: 'SecureGuard Solutions', type: 'Private Sector', roles: 7, openings: 'Security Management, Team Lead' },
+                      { name: 'TechCorp India', type: 'Private Sector - IT', roles: 5, openings: 'Infrastructure, Network Management' },
+                      { name: 'Coal India Limited', type: 'JSU - Mining', roles: 9, openings: 'Safety, Operations, Supervision' }
+                    ].map((employer, idx) => (
+                      <div key={idx} className="border-b border-slate-700 pb-4 last:border-0">
+                        <div className="flex justify-between items-start mb-2">
+                          <div>
+                            <h3 className="font-semibold text-white">{employer.name}</h3>
+                            <p className="text-sm text-slate-400">{employer.type}</p>
+                          </div>
+                          <Badge className="bg-blue-600">{employer.roles} Roles</Badge>
+                        </div>
+                        <p className="text-sm text-slate-300 mb-2">{employer.openings}</p>
+                        <Button className="bg-slate-700 hover:bg-slate-600 text-sm">View Openings</Button>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </TabsContent>
 
           {/* Exams Tab */}
           <TabsContent value="exams" className="space-y-6">
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white">Government Sector Exams</CardTitle>
-                <CardDescription className="text-slate-300">Written exams you need to clear for government jobs</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      name: 'UPSC (Union Public Service Commission)',
-                      exams: ['CDS', 'CAPF', 'NDA'],
-                      syllabus: 'General Studies, Optional Subject, Interview',
-                      difficulty: 'Very High',
-                      frequency: 'Twice yearly'
-                    },
-                    {
-                      name: 'SSC (Staff Selection Commission)',
-                      exams: ['CGL', 'CHSL', 'CPO'],
-                      syllabus: 'Quantitative Aptitude, English, Reasoning, General Knowledge',
-                      difficulty: 'High',
-                      frequency: 'Multiple times yearly'
-                    },
-                    {
-                      name: 'RRB (Railway Recruitment Board)',
-                      exams: ['RPF Constable', 'Railway Group D', 'NTPC'],
-                      syllabus: 'General Knowledge, Arithmetic, Reasoning',
-                      difficulty: 'Medium',
-                      frequency: 'Multiple times yearly'
-                    },
-                    {
-                      name: 'UPSC Intelligence Bureau (IB)',
-                      exams: ['Grade-II Officer'],
-                      syllabus: 'General Studies, Interview, Physical Test',
-                      difficulty: 'Very High',
-                      frequency: 'Annually'
-                    },
-                    {
-                      name: 'DRDO Recruitment',
-                      exams: ['Scientist Entry', 'Technical Officer'],
-                      syllabus: 'Engineering Core, Technical Knowledge, General Awareness',
-                      difficulty: 'High',
-                      frequency: 'As per notifications'
-                    },
-                    {
-                      name: 'BSF/CRPF/CISF Recruitment',
-                      exams: ['Constable', 'Sub-Inspector'],
-                      syllabus: 'General Knowledge, Arithmetic, Physical Test',
-                      difficulty: 'Medium-High',
-                      frequency: 'Multiple times yearly'
-                    }
-                  ].map((exam, idx) => (
-                    <Card key={idx} className="bg-slate-700 border-slate-600">
-                      <CardContent className="p-4">
-                        <h3 className="font-semibold text-blue-300 mb-3">{exam.name}</h3>
-                        <div className="space-y-2 text-sm">
-                          <div>
-                            <p className="text-slate-400">Associated Exams:</p>
-                            <p className="text-white">{exam.exams.join(', ')}</p>
-                          </div>
-                          <div>
-                            <p className="text-slate-400">Syllabus:</p>
-                            <p className="text-white">{exam.syllabus}</p>
-                          </div>
-                          <div className="flex justify-between pt-2 border-t border-slate-600">
-                            <div>
-                              <p className="text-slate-400 text-xs">Difficulty</p>
-                              <p className="text-red-300 font-semibold">{exam.difficulty}</p>
-                            </div>
-                            <div>
-                              <p className="text-slate-400 text-xs">Frequency</p>
-                              <p className="text-green-300 font-semibold">{exam.frequency}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div className="grid gap-4">
+              {[
+                {
+                  name: 'UPSC CDS (Combined Defence Services)',
+                  frequency: 'Twice yearly',
+                  difficulty: 'Very High',
+                  exams: ['Written Exam', 'Intelligence Test', 'Psychological Test', 'Interview'],
+                  age: '19-24 years',
+                  benefit: 'Officer rank positions'
+                },
+                {
+                  name: 'SSC-CGL (Combined Graduate Level)',
+                  frequency: 'Annual',
+                  difficulty: 'High',
+                  exams: ['Tier-I (Online)', 'Tier-II (Online)', 'Tier-III (Descriptive)', 'Tier-IV (Computer)'],
+                  age: 'Age relaxation applicable',
+                  benefit: 'Government Group B & C posts'
+                },
+                {
+                  name: 'RRB NTPC (Railway)',
+                  frequency: 'Quarterly',
+                  difficulty: 'Medium',
+                  exams: ['CBT Stage 1', 'CBT Stage 2', 'Document Verification'],
+                  age: 'Age relaxation for ex-servicemen',
+                  benefit: 'Railway sector positions'
+                },
+                {
+                  name: 'AFCAT (Armed Forces Common Admission Test)',
+                  frequency: 'Twice yearly',
+                  difficulty: 'High',
+                  exams: ['Written Exam', 'SSB Interview', 'Medical Examination'],
+                  age: '20-24 years',
+                  benefit: 'Officer commissions'
+                }
+              ].map((exam, idx) => (
+                <Card key={idx} className="bg-slate-800 border-slate-700">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-white">{exam.name}</CardTitle>
+                      <Badge className="bg-yellow-600">{exam.difficulty}</Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div>
+                      <p className="text-sm text-slate-300">Frequency: <span className="text-white font-semibold">{exam.frequency}</span></p>
+                      <p className="text-sm text-slate-300">Age Criteria: <span className="text-white font-semibold">{exam.age}</span></p>
+                      <p className="text-sm text-slate-300">Benefit: <span className="text-white font-semibold">{exam.benefit}</span></p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400 mb-2">Examination Stages:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {exam.exams.map((stage, i) => (
+                          <Badge key={i} className="bg-slate-700 text-slate-200">{stage}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <Button className="bg-blue-600 hover:bg-blue-700 w-full mt-4">Learn More</Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </TabsContent>
 
-          {/* Government Path Guide */}
-          <TabsContent value="guide" className="space-y-6">
+          {/* Career Pathway Tab */}
+          <TabsContent value="pathway" className="space-y-6">
             <Card className="bg-slate-800 border-slate-700">
               <CardHeader>
-                <CardTitle className="text-white">Your Path to Government Jobs</CardTitle>
-                <CardDescription className="text-slate-300">Step-by-step guide for Agniveers to transition to government roles</CardDescription>
+                <CardTitle>Government vs Private vs Sector Opportunities</CardTitle>
+                <CardDescription className="text-slate-400">Choose the path that suits your career goals</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {[
-                  {
-                    step: 1,
-                    title: 'Understand Your Eligibility',
-                    details: 'Check age limit, educational qualification, and service experience requirements for your target role',
-                    advantages: 'Agniveers get age relaxation of 3-5 years in many exams'
-                  },
-                  {
-                    step: 2,
-                    title: 'Choose Your Exam',
-                    details: 'Select UPSC CDS/CAPF/NDA, SSC-CGL, RRB, or specialized exams based on your background',
-                    advantages: 'Multiple pathways available for different roles'
-                  },
-                  {
-                    step: 3,
-                    title: 'Prepare Systematically',
-                    details: 'Study syllabus, take mock tests, join coaching if needed, prepare for 6-12 months',
-                    advantages: 'Military training gives you advantage in discipline and problem-solving'
-                  },
-                  {
-                    step: 4,
-                    title: 'Apply & Appear for Exam',
-                    details: 'Submit application before deadline, appear for written exam, physical test if applicable',
-                    advantages: 'Your physical fitness from military service is an asset'
-                  },
-                  {
-                    step: 5,
-                    title: 'Interview & Selection',
-                    details: 'Clear interview round, medical examination, final selection',
-                    advantages: 'Your experience and leadership skills impress interviewers'
-                  },
-                  {
-                    step: 6,
-                    title: 'Join Government Role',
-                    details: 'Start your new career with permanent status, pension, job security',
-                    advantages: 'Higher job security and benefits than private sector'
-                  }
-                ].map((item) => (
-                  <div key={item.step} className="border-l-4 border-blue-600 pl-4 pb-4">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white">
-                        {item.step}
-                      </div>
-                      <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                    </div>
-                    <p className="text-slate-300 mb-2">{item.details}</p>
-                    <p className="text-green-300 text-sm flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4" />
-                      {item.advantages}
-                    </p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Benefits Comparison */}
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white">Government vs Private Sector</CardTitle>
-              </CardHeader>
-              <CardContent>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-900/20 border border-blue-700 p-4 rounded-lg">
-                    <h3 className="font-semibold text-blue-300 mb-3">Government Jobs</h3>
-                    <ul className="space-y-2 text-sm text-slate-300">
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Permanent job security</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Comprehensive pension scheme</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Fixed working hours</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Leave benefits & allowances</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Competitive exams ensure merit</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-purple-900/20 border border-purple-700 p-4 rounded-lg">
-                    <h3 className="font-semibold text-purple-300 mb-3">Private Sector Jobs</h3>
-                    <ul className="space-y-2 text-sm text-slate-300">
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Higher salary potential</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Faster career growth</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Flexible work environment</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Diverse career opportunities</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                        <span>Performance-based rewards</span>
-                      </li>
-                    </ul>
-                  </div>
+                  <Card className="bg-slate-700 border-slate-600">
+                    <CardHeader>
+                      <CardTitle className="text-emerald-400">Private Sector</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3 text-sm text-slate-300">
+                      <p>✓ Competitive salaries (₹45K - ₹95K monthly)</p>
+                      <p>✓ Performance-based growth</p>
+                      <p>✓ International exposure</p>
+                      <p>✓ Flexible working culture</p>
+                      <p>✓ Quick recruitment process</p>
+                      <Button className="bg-emerald-600 hover:bg-emerald-700 w-full mt-4">View Private Roles</Button>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-slate-700 border-slate-600">
+                    <CardHeader>
+                      <CardTitle className="text-blue-400">PSU Sector</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3 text-sm text-slate-300">
+                      <p>✓ Job security & stability</p>
+                      <p>✓ Pension benefits</p>
+                      <p>✓ Employer coverage</p>
+                      <p>✓ Government regulations & fairness</p>
+                      <p>✓ Age relaxation for ex-servicemen</p>
+                      <Button className="bg-blue-600 hover:bg-blue-700 w-full mt-4">View PSU Roles</Button>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-slate-700 border-slate-600">
+                    <CardHeader>
+                      <CardTitle className="text-purple-400">PPP Sector</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3 text-sm text-slate-300">
+                      <p>✓ Hybrid benefits (Government + Private)</p>
+                      <p>✓ Infrastructure projects</p>
+                      <p>✓ Skill development opportunities</p>
+                      <p>✓ Decent salary packages</p>
+                      <p>✓ National importance projects</p>
+                      <Button className="bg-purple-600 hover:bg-purple-700 w-full mt-4">View PPP Roles</Button>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-slate-700 border-slate-600">
+                    <CardHeader>
+                      <CardTitle className="text-orange-400">JSU Sector</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3 text-sm text-slate-300">
+                      <p>✓ Government backing with private expertise</p>
+                      <p>✓ Better facilities & technology</p>
+                      <p>✓ Strong growth opportunities</p>
+                      <p>✓ Competitive compensation</p>
+                      <p>✓ Strategic industry roles</p>
+                      <Button className="bg-orange-600 hover:bg-orange-700 w-full mt-4">View JSU Roles</Button>
+                    </CardContent>
+                  </Card>
                 </div>
+
+                <Card className="bg-slate-700 border-slate-600 p-6">
+                  <h3 className="text-lg font-semibold text-white mb-4">Special Benefits for Agniveers</h3>
+                  <ul className="space-y-2 text-sm text-slate-300">
+                    <li>✓ Age relaxation (up to 5 years) in government exams</li>
+                    <li>✓ Preference points in PSU recruitment</li>
+                    <li>✓ Government skill certification programs (free)</li>
+                    <li>✓ Priority in infrastructure projects (PPP/JSU)</li>
+                    <li>✓ Reservation benefits in Group B & C positions</li>
+                  </ul>
+                </Card>
               </CardContent>
             </Card>
           </TabsContent>
         </Tabs>
-      </div>
+      </main>
+
+      {/* Job Detail Modal */}
+      {selectedJob && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50">
+          <Card className="bg-slate-800 border-slate-700 max-w-2xl w-full max-h-96 overflow-y-auto">
+            <CardHeader className="flex flex-row justify-between items-start">
+              <div>
+                <CardTitle className="text-white">{selectedJob.title}</CardTitle>
+                <CardDescription className="text-slate-400">{selectedJob.company}</CardDescription>
+              </div>
+              <Button variant="ghost" className="text-white" onClick={() => setSelectedJob(null)}>✕</Button>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="text-slate-400">Location</p>
+                  <p className="text-white font-semibold flex items-center gap-1"><MapPin className="w-4 h-4" /> {selectedJob.location}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400">Salary</p>
+                  <p className="text-white font-semibold flex items-center gap-1"><IndianRupee className="w-4 h-4" /> {selectedJob.salary}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400">Experience</p>
+                  <p className="text-white font-semibold">{selectedJob.experience}</p>
+                </div>
+                <div>
+                  <p className="text-slate-400">Sector</p>
+                  <p className="text-white font-semibold"><Badge className={getSectorColor(selectedJob.sector)}>{selectedJob.sector}</Badge></p>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-slate-400 mb-2">Description</p>
+                <p className="text-white">{selectedJob.description}</p>
+              </div>
+
+              <div>
+                <p className="text-slate-400 mb-2">Required Skills</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedJob.requiredSkills.map(skill => (
+                    <Badge key={skill} className="bg-slate-700 text-slate-200">{skill}</Badge>
+                  ))}
+                </div>
+              </div>
+
+              {selectedJob.lastApplyDate && (
+                <div className="bg-yellow-600/20 border border-yellow-600/30 rounded p-3">
+                  <p className="text-yellow-300 text-sm"><Calendar className="w-4 h-4 inline mr-2" />Apply by: {selectedJob.lastApplyDate}</p>
+                </div>
+              )}
+
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full mt-4">Apply Now</Button>
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
