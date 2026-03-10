@@ -8,154 +8,254 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Users, Search, Mail, Phone, MapPin, ArrowRight, CheckCircle } from 'lucide-react';
+import { 
+  Briefcase, Search, MapPin, IndianRupee, Users, Building2, 
+  ArrowRight, CheckCircle, Star, Zap, Target, BookOpen, Home, LogOut
+} from 'lucide-react';
 
-const MOCK_CANDIDATES = [
+const EMPLOYERS = [
   {
     id: 1,
-    name: 'Arjun Singh',
-    role: 'Infantry',
-    location: 'Delhi',
-    yearsOfService: 4,
-    skills: ['Leadership', 'Tactical Planning', 'Emergency Response'],
-    verified: true,
-    email: 'arjun@example.com',
-    phone: '+91 98765 43210',
-    education: "Bachelor's in Electronics"
+    name: 'TechCorp India',
+    industry: 'Information Technology',
+    location: 'Bangalore',
+    description: 'Leading IT services company hiring tech-savvy professionals',
+    logo: '💻',
+    rating: 4.8,
+    employees: '5000+',
+    openPositions: 12
   },
   {
     id: 2,
-    name: 'Priya Sharma',
-    role: 'Signals',
-    location: 'Bangalore',
-    yearsOfService: 3,
-    skills: ['Network Administration', 'IT Support', 'System Maintenance'],
-    verified: true,
-    email: 'priya@example.com',
-    phone: '+91 87654 32109',
-    education: 'Bachelor in Computer Science'
+    name: 'SecureGuard Solutions',
+    industry: 'Security & Defense',
+    location: 'Delhi',
+    description: 'Premier security firm seeking experienced operational leaders',
+    logo: '🛡️',
+    rating: 4.9,
+    employees: '2000+',
+    openPositions: 8
   },
   {
     id: 3,
-    name: 'Rajesh Kumar',
-    role: 'Logistics',
+    name: 'LogisticsPro Network',
+    industry: 'Logistics & Supply Chain',
     location: 'Mumbai',
-    yearsOfService: 5,
-    skills: ['Supply Chain Management', 'Operations', 'Warehouse Management'],
-    verified: true,
-    email: 'rajesh@example.com',
-    phone: '+91 76543 21098',
-    education: 'Diploma in Business Management'
+    description: 'Fast-growing logistics company looking for operations managers',
+    logo: '📦',
+    rating: 4.7,
+    employees: '3500+',
+    openPositions: 15
   },
   {
     id: 4,
-    name: 'Vikram Patel',
-    role: 'Engineering Support',
-    location: 'Chennai',
-    yearsOfService: 6,
-    skills: ['Project Engineering', 'Technical Management', 'Quality Assurance'],
-    verified: true,
-    email: 'vikram@example.com',
-    phone: '+91 65432 10987',
-    education: 'Bachelor in Mechanical Engineering'
+    name: 'HealthFirst Services',
+    industry: 'Healthcare',
+    location: 'Pune',
+    description: 'Multi-specialty healthcare provider expanding across India',
+    logo: '⚕️',
+    rating: 4.6,
+    employees: '1500+',
+    openPositions: 6
   },
   {
     id: 5,
-    name: 'Neha Gupta',
-    role: 'Medical Support',
-    location: 'Delhi',
-    yearsOfService: 3,
-    skills: ['Emergency Response', 'Healthcare Coordination', 'Disaster Relief'],
-    verified: true,
-    email: 'neha@example.com',
-    phone: '+91 54321 09876',
-    education: 'Bachelor in Nursing'
+    name: 'InfraBuild Engineering',
+    industry: 'Construction & Engineering',
+    location: 'Chennai',
+    description: 'Major infrastructure development company seeking project leads',
+    logo: '🏗️',
+    rating: 4.8,
+    employees: '4000+',
+    openPositions: 10
+  },
+  {
+    id: 6,
+    name: 'GovernanceIQ Solutions',
+    industry: 'Public Administration',
+    location: 'New Delhi',
+    description: 'Government contractor looking for experienced administrators',
+    logo: '🏛️',
+    rating: 4.9,
+    employees: '800+',
+    openPositions: 5
   }
 ];
 
-const MOCK_JOBS = [
+const JOB_LISTINGS = [
   {
     id: 1,
-    title: 'Security Operations Manager',
-    company: 'Private Security Ltd.',
+    title: 'Senior Security Operations Manager',
+    company: 'SecureGuard Solutions',
     location: 'Delhi',
-    salary: '₹50,000 - ₹70,000/month',
+    salary: '₹65,000 - ₹90,000/month',
     type: 'Full-time',
-    requiredRole: 'Infantry'
+    experience: '3-5 years',
+    requiredSkills: ['Leadership', 'Team Management', 'Tactical Planning'],
+    idealRole: 'Infantry',
+    description: 'Lead security operations team, manage 50+ personnel',
+    urgency: 'High',
+    postedDate: '2 days ago'
   },
   {
     id: 2,
-    title: 'Network Technician',
-    company: 'Telecom India',
+    title: 'Network Infrastructure Manager',
+    company: 'TechCorp India',
     location: 'Bangalore',
-    salary: '₹40,000 - ₹55,000/month',
+    salary: '₹55,000 - ₹75,000/month',
     type: 'Full-time',
-    requiredRole: 'Signals'
+    experience: '2-4 years',
+    requiredSkills: ['Network Administration', 'System Maintenance', 'Technical Documentation'],
+    idealRole: 'Signals',
+    description: 'Manage enterprise network infrastructure, ensure 99.9% uptime',
+    urgency: 'Medium',
+    postedDate: '5 days ago'
   },
   {
     id: 3,
-    title: 'Operations Manager',
-    company: 'Logistics Plus',
+    title: 'Supply Chain Operations Director',
+    company: 'LogisticsPro Network',
     location: 'Mumbai',
-    salary: '₹55,000 - ₹75,000/month',
+    salary: '₹70,000 - ₹95,000/month',
     type: 'Full-time',
-    requiredRole: 'Logistics'
+    experience: '4-6 years',
+    requiredSkills: ['Supply Chain Management', 'Operations Planning', 'Warehouse Management'],
+    idealRole: 'Logistics',
+    description: 'Oversee logistics operations across 10 cities, optimize efficiency',
+    urgency: 'High',
+    postedDate: '1 day ago'
   },
   {
     id: 4,
-    title: 'Project Coordinator',
-    company: 'Construction Co.',
+    title: 'Project Execution Manager',
+    company: 'InfraBuild Engineering',
     location: 'Pune',
-    salary: '₹45,000 - ₹60,000/month',
+    salary: '₹60,000 - ₹80,000/month',
     type: 'Full-time',
-    requiredRole: 'Engineering Support'
+    experience: '3-5 years',
+    requiredSkills: ['Project Management', 'Technical Knowledge', 'Quality Assurance'],
+    idealRole: 'Engineering Support',
+    description: 'Lead infrastructure projects worth ₹50+ crores',
+    urgency: 'High',
+    postedDate: '3 days ago'
   },
   {
     id: 5,
-    title: 'Healthcare Manager',
-    company: 'Red Cross',
-    location: 'All India',
+    title: 'Medical Administrator & Coordinator',
+    company: 'HealthFirst Services',
+    location: 'Pune',
     salary: '₹48,000 - ₹65,000/month',
     type: 'Full-time',
-    requiredRole: 'Medical Support'
+    experience: '2-3 years',
+    requiredSkills: ['Healthcare Coordination', 'Emergency Response', 'Team Leadership'],
+    idealRole: 'Medical Support',
+    description: 'Manage hospital operations, coordinate with medical teams',
+    urgency: 'Medium',
+    postedDate: '4 days ago'
+  },
+  {
+    id: 6,
+    title: 'Government Affairs Officer',
+    company: 'GovernanceIQ Solutions',
+    location: 'New Delhi',
+    salary: '₹50,000 - ₹70,000/month',
+    type: 'Full-time',
+    experience: '2-4 years',
+    requiredSkills: ['Administration', 'Policy Knowledge', 'Documentation'],
+    idealRole: 'Infantry',
+    description: 'Interface with government agencies, manage compliance',
+    urgency: 'Medium',
+    postedDate: '1 week ago'
+  },
+  {
+    id: 7,
+    title: 'IT Systems Administrator',
+    company: 'TechCorp India',
+    location: 'Bangalore',
+    salary: '₹40,000 - ₹55,000/month',
+    type: 'Full-time',
+    experience: '1-3 years',
+    requiredSkills: ['System Administration', 'IT Support', 'Network Administration'],
+    idealRole: 'Signals',
+    description: 'Manage IT infrastructure, user support, system security',
+    urgency: 'Medium',
+    postedDate: '6 days ago'
+  },
+  {
+    id: 8,
+    title: 'Warehouse Operations Specialist',
+    company: 'LogisticsPro Network',
+    location: 'Mumbai',
+    salary: '₹35,000 - ₹50,000/month',
+    type: 'Full-time',
+    experience: '1-2 years',
+    requiredSkills: ['Inventory Management', 'Logistics', 'Operations'],
+    idealRole: 'Logistics',
+    description: 'Optimize warehouse operations, manage inventory',
+    urgency: 'Low',
+    postedDate: '1 week ago'
   }
 ];
 
 export default function RecruiterPage() {
-  const [activeTab, setActiveTab] = useState('candidates');
-  const [searchRole, setSearchRole] = useState('');
-  const [searchLocation, setSearchLocation] = useState('');
-  const [selectedCandidate, setSelectedCandidate] = useState<typeof MOCK_CANDIDATES[0] | null>(null);
+  const [activeTab, setActiveTab] = useState('jobs');
+  const [selectedJob, setSelectedJob] = useState<typeof JOB_LISTINGS[0] | null>(JOB_LISTINGS[0]);
+  const [selectedEmployer, setSelectedEmployer] = useState<typeof EMPLOYERS[0] | null>(null);
   const [jobSearch, setJobSearch] = useState('');
+  const [filterRole, setFilterRole] = useState('');
+  const [filterLocation, setFilterLocation] = useState('');
+  const [filterSalary, setFilterSalary] = useState('');
+  const [employerSearch, setEmployerSearch] = useState('');
 
-  const filteredCandidates = MOCK_CANDIDATES.filter(candidate => {
-    const roleMatch = !searchRole || candidate.role === searchRole;
-    const locationMatch = !searchLocation || candidate.location === searchLocation;
-    return roleMatch && locationMatch;
+  const filteredJobs = JOB_LISTINGS.filter(job => {
+    const searchMatch = job.title.toLowerCase().includes(jobSearch.toLowerCase()) ||
+                       job.company.toLowerCase().includes(jobSearch.toLowerCase());
+    const roleMatch = !filterRole || job.idealRole === filterRole;
+    const locationMatch = !filterLocation || job.location === filterLocation;
+    const salaryMatch = !filterSalary || (filterSalary === 'high' && parseInt(job.salary.split('-')[1]) >= 75000) ||
+                                         (filterSalary === 'medium' && parseInt(job.salary.split('-')[1]) >= 55000 && parseInt(job.salary.split('-')[1]) < 75000) ||
+                                         (filterSalary === 'low' && parseInt(job.salary.split('-')[1]) < 55000);
+    return searchMatch && roleMatch && locationMatch && salaryMatch;
   });
 
-  const filteredJobs = MOCK_JOBS.filter(job =>
-    job.title.toLowerCase().includes(jobSearch.toLowerCase()) ||
-    job.company.toLowerCase().includes(jobSearch.toLowerCase())
+  const filteredEmployers = EMPLOYERS.filter(emp =>
+    emp.name.toLowerCase().includes(employerSearch.toLowerCase()) ||
+    emp.industry.toLowerCase().includes(employerSearch.toLowerCase())
   );
 
+  const getUrgencyColor = (urgency: string) => {
+    switch(urgency) {
+      case 'High': return 'bg-red-900 text-red-100';
+      case 'Medium': return 'bg-yellow-900 text-yellow-100';
+      default: return 'bg-green-900 text-green-100';
+    }
+  };
+
+  const getMatchPercentage = (job: typeof JOB_LISTINGS[0]) => {
+    // Mock skill match calculation
+    const baseMatch = 75;
+    return baseMatch + Math.random() * 20;
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Navigation */}
       <nav className="border-b border-slate-700 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold flex items-center gap-2">
-            <Users className="w-6 h-6 text-blue-500" />
-            SkillBridge Recruiters
+            <Briefcase className="w-6 h-6 text-blue-500" />
+            SkillBridge Jobs
           </Link>
           <div className="flex gap-4">
             <Link href="/dashboard">
               <Button variant="ghost" className="text-white hover:bg-slate-700">
+                <Home className="w-4 h-4 mr-2" />
                 My Dashboard
               </Button>
             </Link>
             <Link href="/">
               <Button variant="ghost" className="text-white hover:bg-slate-700">
+                <LogOut className="w-4 h-4 mr-2" />
                 Home
               </Button>
             </Link>
@@ -166,32 +266,47 @@ export default function RecruiterPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Talent Marketplace</h1>
-          <p className="text-slate-300">Find and hire verified Agniveers with military expertise</p>
+          <h1 className="text-4xl font-bold mb-2">Browse Job Opportunities</h1>
+          <p className="text-slate-300">Find your perfect match from top employers across India</p>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 bg-slate-800 border-slate-700">
-            <TabsTrigger value="candidates" className="text-white data-[state=active]:bg-blue-600">
-              Browse Candidates
-            </TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 bg-slate-800 border border-slate-700">
             <TabsTrigger value="jobs" className="text-white data-[state=active]:bg-blue-600">
-              Posted Jobs
+              <Briefcase className="w-4 h-4 mr-2" />
+              Job Opportunities
+            </TabsTrigger>
+            <TabsTrigger value="employers" className="text-white data-[state=active]:bg-blue-600">
+              <Building2 className="w-4 h-4 mr-2" />
+              Top Employers
             </TabsTrigger>
           </TabsList>
 
-          {/* Candidates Tab */}
-          <TabsContent value="candidates" className="space-y-6">
+          {/* Jobs Tab */}
+          <TabsContent value="jobs" className="space-y-6">
             {/* Filters */}
             <Card className="bg-slate-800 border-slate-700">
               <CardHeader>
-                <CardTitle className="text-white">Filter Candidates</CardTitle>
+                <CardTitle className="text-white">Filter Opportunities</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-5 gap-4">
+                  <div>
+                    <label className="text-sm text-slate-300 mb-2 block">Search Jobs</label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-500" />
+                      <Input
+                        placeholder="Job title or company..."
+                        value={jobSearch}
+                        onChange={(e) => setJobSearch(e.target.value)}
+                        className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-500"
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Defence Role</label>
-                    <Select value={searchRole} onValueChange={setSearchRole}>
+                    <Select value={filterRole} onValueChange={setFilterRole}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="All Roles" />
                       </SelectTrigger>
@@ -208,123 +323,172 @@ export default function RecruiterPage() {
 
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Location</label>
-                    <Select value={searchLocation} onValueChange={setSearchLocation}>
+                    <Select value={filterLocation} onValueChange={setFilterLocation}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
-                        <SelectValue placeholder="All Locations" />
+                        <SelectValue placeholder="All Cities" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Locations</SelectItem>
+                        <SelectItem value="">All Cities</SelectItem>
                         <SelectItem value="Delhi">Delhi</SelectItem>
                         <SelectItem value="Bangalore">Bangalore</SelectItem>
                         <SelectItem value="Mumbai">Mumbai</SelectItem>
-                        <SelectItem value="Chennai">Chennai</SelectItem>
                         <SelectItem value="Pune">Pune</SelectItem>
+                        <SelectItem value="Chennai">Chennai</SelectItem>
+                        <SelectItem value="New Delhi">New Delhi</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <label className="text-sm text-slate-300 mb-2 block">Salary Range</label>
+                    <Select value={filterSalary} onValueChange={setFilterSalary}>
+                      <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
+                        <SelectValue placeholder="Any" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="">Any</SelectItem>
+                        <SelectItem value="high">₹75,000+ monthly</SelectItem>
+                        <SelectItem value="medium">₹55,000 - ₹75,000</SelectItem>
+                        <SelectItem value="low">Below ₹55,000</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Results</label>
-                    <div className="bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white">
-                      {filteredCandidates.length} candidates found
+                    <div className="bg-slate-700 border border-slate-600 rounded-lg px-4 py-2 text-white font-medium">
+                      {filteredJobs.length} jobs
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Candidates Grid */}
+            {/* Jobs Layout */}
             <div className="grid lg:grid-cols-3 gap-6">
-              {/* Candidates List */}
-              <div className="lg:col-span-1 space-y-4">
-                <h2 className="text-lg font-semibold">Candidates ({filteredCandidates.length})</h2>
-                {filteredCandidates.map(candidate => (
+              {/* Jobs List */}
+              <div className="lg:col-span-1 space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto">
+                <h2 className="text-lg font-semibold sticky top-0 bg-slate-800 p-2 rounded">
+                  Available Jobs ({filteredJobs.length})
+                </h2>
+                {filteredJobs.map(job => (
                   <div
-                    key={candidate.id}
-                    onClick={() => setSelectedCandidate(candidate)}
-                    className={`p-4 rounded-lg cursor-pointer transition-all ${
-                      selectedCandidate?.id === candidate.id
-                        ? 'bg-blue-600 border-blue-500'
-                        : 'bg-slate-700 border-slate-600 hover:bg-slate-600'
-                    } border`}
+                    key={job.id}
+                    onClick={() => setSelectedJob(job)}
+                    className={`p-4 rounded-lg cursor-pointer transition-all border ${
+                      selectedJob?.id === job.id
+                        ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/20'
+                        : 'bg-slate-700 border-slate-600 hover:border-blue-500 hover:bg-slate-650'
+                    }`}
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-medium text-white">{candidate.name}</h3>
-                      {candidate.verified && (
-                        <CheckCircle className="w-4 h-4 text-green-400" />
-                      )}
+                      <h3 className="font-semibold text-white text-sm line-clamp-2">{job.title}</h3>
+                      <Badge className={`ml-2 flex-shrink-0 ${getUrgencyColor(job.urgency)}`}>
+                        {job.urgency}
+                      </Badge>
                     </div>
-                    <p className="text-slate-300 text-sm">{candidate.role}</p>
-                    <p className="text-slate-400 text-sm flex items-center gap-1 mt-1">
+                    <p className="text-slate-300 text-sm font-medium">{job.company}</p>
+                    <div className="flex items-center gap-1 text-slate-400 text-xs mt-2">
                       <MapPin className="w-3 h-3" />
-                      {candidate.location}
-                    </p>
+                      {job.location}
+                    </div>
+                    <div className="flex items-center gap-1 text-slate-400 text-xs mt-1">
+                      <IndianRupee className="w-3 h-3" />
+                      {job.salary.split('-')[1]}
+                    </div>
                   </div>
                 ))}
               </div>
 
-              {/* Candidate Details */}
+              {/* Job Details */}
               <div className="lg:col-span-2">
-                {selectedCandidate ? (
+                {selectedJob ? (
                   <Card className="bg-slate-800 border-slate-700 sticky top-20">
                     <CardHeader>
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <CardTitle className="text-white text-2xl">{selectedCandidate.name}</CardTitle>
-                          <div className="flex gap-2 mt-2">
-                            <Badge className="bg-blue-900 text-blue-100">{selectedCandidate.role}</Badge>
-                            <Badge className="bg-green-900 text-green-100">Verified</Badge>
+                      <div className="mb-4">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <CardTitle className="text-white text-2xl">{selectedJob.title}</CardTitle>
+                            <p className="text-blue-400 font-medium mt-1">{selectedJob.company}</p>
                           </div>
+                          <Badge className={getUrgencyColor(selectedJob.urgency)}>
+                            {selectedJob.urgency} Priority
+                          </Badge>
                         </div>
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                      <div>
-                        <h4 className="text-white font-semibold mb-3">Contact Information</h4>
-                        <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <Mail className="w-4 h-4 text-blue-400" />
-                            {selectedCandidate.email}
+                      {/* Match Score */}
+                      <div className="bg-slate-700 rounded-lg p-4 flex items-center justify-between">
+                        <div>
+                          <p className="text-slate-400 text-sm">Skill Match Score</p>
+                          <p className="text-2xl font-bold text-white">{getMatchPercentage(selectedJob).toFixed(0)}%</p>
+                        </div>
+                        <Zap className="w-8 h-8 text-yellow-500" />
+                      </div>
+
+                      {/* Key Details */}
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-slate-700 rounded-lg p-3">
+                          <p className="text-slate-400 text-sm mb-1">Salary</p>
+                          <p className="text-white font-semibold">{selectedJob.salary}</p>
+                        </div>
+                        <div className="bg-slate-700 rounded-lg p-3">
+                          <p className="text-slate-400 text-sm mb-1">Location</p>
+                          <div className="flex items-center gap-1 text-white font-semibold">
+                            <MapPin className="w-4 h-4" />
+                            {selectedJob.location}
                           </div>
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <Phone className="w-4 h-4 text-blue-400" />
-                            {selectedCandidate.phone}
-                          </div>
-                          <div className="flex items-center gap-2 text-slate-300">
-                            <MapPin className="w-4 h-4 text-blue-400" />
-                            {selectedCandidate.location}
-                          </div>
+                        </div>
+                        <div className="bg-slate-700 rounded-lg p-3">
+                          <p className="text-slate-400 text-sm mb-1">Experience</p>
+                          <p className="text-white font-semibold">{selectedJob.experience}</p>
+                        </div>
+                        <div className="bg-slate-700 rounded-lg p-3">
+                          <p className="text-slate-400 text-sm mb-1">Posted</p>
+                          <p className="text-white font-semibold text-sm">{selectedJob.postedDate}</p>
                         </div>
                       </div>
 
+                      {/* Description */}
                       <div>
-                        <h4 className="text-white font-semibold mb-3">Background</h4>
-                        <p className="text-slate-300">
-                          <strong>Years of Service:</strong> {selectedCandidate.yearsOfService} years
-                        </p>
-                        <p className="text-slate-300">
-                          <strong>Education:</strong> {selectedCandidate.education}
-                        </p>
+                        <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
+                          <Briefcase className="w-4 h-4 text-blue-400" />
+                          About This Role
+                        </h4>
+                        <p className="text-slate-300">{selectedJob.description}</p>
                       </div>
 
+                      {/* Required Skills */}
                       <div>
-                        <h4 className="text-white font-semibold mb-3">Skills</h4>
+                        <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                          <Target className="w-4 h-4 text-blue-400" />
+                          Required Skills
+                        </h4>
                         <div className="flex flex-wrap gap-2">
-                          {selectedCandidate.skills.map((skill, idx) => (
-                            <Badge key={idx} className="bg-blue-900 text-blue-100">
+                          {selectedJob.requiredSkills.map((skill, idx) => (
+                            <Badge key={idx} className="bg-blue-900 text-blue-100 border border-blue-700">
                               {skill}
                             </Badge>
                           ))}
                         </div>
                       </div>
 
+                      {/* Ideal Background */}
+                      <div className="bg-blue-900/30 border border-blue-700 rounded-lg p-4">
+                        <p className="text-blue-200 text-sm">
+                          <strong>Ideal for:</strong> Agniveers with background in {selectedJob.idealRole}
+                        </p>
+                      </div>
+
+                      {/* Actions */}
                       <div className="flex gap-3 pt-4">
                         <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
-                          <Mail className="w-4 h-4 mr-2" />
-                          Send Message
+                          <Briefcase className="w-4 h-4 mr-2" />
+                          Apply Now
                         </Button>
                         <Button variant="outline" className="flex-1 border-slate-600 text-white hover:bg-slate-700">
-                          Download CV
+                          Save Job
                         </Button>
                       </div>
                     </CardContent>
@@ -332,8 +496,8 @@ export default function RecruiterPage() {
                 ) : (
                   <Card className="bg-slate-800 border-slate-700 flex items-center justify-center h-full min-h-96">
                     <CardContent className="text-center">
-                      <Users className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-                      <p className="text-slate-400">Select a candidate to view details</p>
+                      <Briefcase className="w-12 h-12 text-slate-600 mx-auto mb-4" />
+                      <p className="text-slate-400">Select a job to view details</p>
                     </CardContent>
                   </Card>
                 )}
@@ -341,71 +505,126 @@ export default function RecruiterPage() {
             </div>
           </TabsContent>
 
-          {/* Jobs Tab */}
-          <TabsContent value="jobs" className="space-y-6">
-            {/* Search */}
+          {/* Employers Tab */}
+          <TabsContent value="employers" className="space-y-6">
+            {/* Employer Search */}
             <Card className="bg-slate-800 border-slate-700">
               <CardContent className="p-6">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-500" />
                   <Input
-                    placeholder="Search jobs by title or company..."
-                    value={jobSearch}
-                    onChange={(e) => setJobSearch(e.target.value)}
+                    placeholder="Search employers by name or industry..."
+                    value={employerSearch}
+                    onChange={(e) => setEmployerSearch(e.target.value)}
                     className="pl-10 bg-slate-700 border-slate-600 text-white placeholder:text-slate-500"
                   />
                 </div>
               </CardContent>
             </Card>
 
-            {/* Jobs List */}
-            <div className="space-y-4">
-              {filteredJobs.map(job => (
-                <Card key={job.id} className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-all">
+            {/* Employers Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredEmployers.map(employer => (
+                <Card 
+                  key={employer.id} 
+                  onClick={() => setSelectedEmployer(employer)}
+                  className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-all cursor-pointer group"
+                >
                   <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-semibold text-white">{job.title}</h3>
-                        <p className="text-slate-400">{job.company}</p>
-                      </div>
-                      <Badge className="bg-blue-900 text-blue-100">{job.type}</Badge>
+                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
+                      {employer.logo}
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-4 mb-4">
-                      <div className="flex items-center gap-2 text-slate-300">
+                    <h3 className="text-xl font-bold text-white mb-1">{employer.name}</h3>
+                    <p className="text-blue-400 text-sm font-medium mb-3">{employer.industry}</p>
+
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center gap-2 text-slate-300 text-sm">
                         <MapPin className="w-4 h-4 text-slate-500" />
-                        {job.location}
+                        {employer.location}
                       </div>
-                      <div className="text-slate-300">
-                        <strong>Salary:</strong> {job.salary}
+                      <div className="flex items-center gap-2 text-slate-300 text-sm">
+                        <Users className="w-4 h-4 text-slate-500" />
+                        {employer.employees} employees
                       </div>
-                      <div className="text-slate-300">
-                        <strong>Role Match:</strong> {job.requiredRole}
+                      <div className="flex items-center gap-2 text-slate-300 text-sm">
+                        <Briefcase className="w-4 h-4 text-slate-500" />
+                        {employer.openPositions} open positions
                       </div>
                     </div>
 
-                    <div className="flex gap-3">
-                      <Button className="bg-blue-600 hover:bg-blue-700">
-                        View Matching Candidates <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                      <Button variant="outline" className="border-slate-600 text-white hover:bg-slate-700">
-                        Post Job
-                      </Button>
+                    <div className="flex items-center gap-2 mb-4 pb-4 border-b border-slate-700">
+                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                      <span className="text-white font-semibold">{employer.rating}</span>
+                      <span className="text-slate-400 text-sm">(Employer Rating)</span>
                     </div>
+
+                    <p className="text-slate-300 text-sm mb-4 line-clamp-2">{employer.description}</p>
+
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                      View All Jobs
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
+
+            {/* Employer Details Modal Alternative */}
+            {selectedEmployer && (
+              <Card className="bg-slate-800 border-slate-700 mt-8">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <div className="text-5xl mb-3">{selectedEmployer.logo}</div>
+                      <CardTitle className="text-white text-2xl">{selectedEmployer.name}</CardTitle>
+                      <p className="text-blue-400 font-medium mt-1">{selectedEmployer.industry}</p>
+                    </div>
+                    <Button variant="outline" className="border-slate-600 text-white hover:bg-slate-700">
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      See All {selectedEmployer.openPositions} Jobs
+                    </Button>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-slate-300">{selectedEmployer.description}</p>
+                  <div className="grid md:grid-cols-4 gap-4">
+                    <div className="bg-slate-700 rounded-lg p-4">
+                      <p className="text-slate-400 text-sm mb-1">Headquarters</p>
+                      <p className="text-white font-semibold">{selectedEmployer.location}</p>
+                    </div>
+                    <div className="bg-slate-700 rounded-lg p-4">
+                      <p className="text-slate-400 text-sm mb-1">Team Size</p>
+                      <p className="text-white font-semibold">{selectedEmployer.employees}</p>
+                    </div>
+                    <div className="bg-slate-700 rounded-lg p-4">
+                      <p className="text-slate-400 text-sm mb-1">Open Positions</p>
+                      <p className="text-white font-semibold">{selectedEmployer.openPositions}</p>
+                    </div>
+                    <div className="bg-slate-700 rounded-lg p-4">
+                      <p className="text-slate-400 text-sm mb-1">Rating</p>
+                      <div className="flex items-center gap-2">
+                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                        <p className="text-white font-semibold">{selectedEmployer.rating}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </TabsContent>
         </Tabs>
 
-        {/* Footer CTA */}
-        <div className="mt-12 p-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-center">
-          <h2 className="text-3xl font-bold mb-4">Post a Job Opening</h2>
-          <p className="text-purple-100 mb-6">Reach thousands of verified Agniveers looking for their next opportunity</p>
-          <Button className="bg-white text-purple-600 hover:bg-slate-100">
-            Post Your Job Now
-          </Button>
+        {/* CTA Section */}
+        <div className="mt-12 p-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Career?</h2>
+          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">Start applying to positions matched to your military background and skills. Our employers actively hire verified Agniveers.</p>
+          <Link href="/dashboard">
+            <Button className="bg-white text-blue-600 hover:bg-slate-100 text-lg px-8">
+              Complete Your Profile
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
