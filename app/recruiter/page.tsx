@@ -306,12 +306,12 @@ export default function RecruiterPage() {
 
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Defence Role</label>
-                    <Select value={filterRole} onValueChange={setFilterRole}>
+                    <Select value={filterRole || "all-roles"} onValueChange={(value) => setFilterRole(value === "all-roles" ? "" : value)}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="All Roles" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Roles</SelectItem>
+                        <SelectItem value="all-roles">All Roles</SelectItem>
                         <SelectItem value="Infantry">Infantry</SelectItem>
                         <SelectItem value="Signals">Signals</SelectItem>
                         <SelectItem value="Logistics">Logistics</SelectItem>
@@ -323,12 +323,12 @@ export default function RecruiterPage() {
 
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Location</label>
-                    <Select value={filterLocation} onValueChange={setFilterLocation}>
+                    <Select value={filterLocation || "all-cities"} onValueChange={(value) => setFilterLocation(value === "all-cities" ? "" : value)}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="All Cities" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Cities</SelectItem>
+                        <SelectItem value="all-cities">All Cities</SelectItem>
                         <SelectItem value="Delhi">Delhi</SelectItem>
                         <SelectItem value="Bangalore">Bangalore</SelectItem>
                         <SelectItem value="Mumbai">Mumbai</SelectItem>
@@ -341,12 +341,12 @@ export default function RecruiterPage() {
 
                   <div>
                     <label className="text-sm text-slate-300 mb-2 block">Salary Range</label>
-                    <Select value={filterSalary} onValueChange={setFilterSalary}>
+                    <Select value={filterSalary || "any"} onValueChange={(value) => setFilterSalary(value === "any" ? "" : value)}>
                       <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                         <SelectValue placeholder="Any" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Any</SelectItem>
+                        <SelectItem value="any">Any</SelectItem>
                         <SelectItem value="high">₹75,000+ monthly</SelectItem>
                         <SelectItem value="medium">₹55,000 - ₹75,000</SelectItem>
                         <SelectItem value="low">Below ₹55,000</SelectItem>
