@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Download, LogOut, MapPin, Briefcase, FileText, CheckCircle } from 'lucide-react';
+import jsPDF from 'jspdf';
 
 const SKILL_TRANSLATIONS: Record<string, string[]> = {
   'Infantry': ['Project Management', 'Team Leadership', 'Risk Assessment', 'Security Management'],
@@ -73,6 +74,134 @@ export default function DashboardPage() {
     router.push('/');
   };
 
+  const handleDownloadPortfolio = () => {
+    const doc = new jsPDF();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    let yPosition = 20;
+
+    // Header
+    doc.setFillColor(30, 41, 82);
+    doc.rect(0, 0, pageWidth, 40, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(24);
+    doc.text('SKILLBRIDGE PORTFOLIO', 20, 25);
+
+    // Reset colors
+    doc.setTextColor(0, 0, 0);
+    yPosition = 50;
+
+    // Title
+    doc.setFontSize(18);
+    doc.setTextColor(30, 58, 138);
+    doc.text(user.name, 20, yPosition);
+    yPosition += 10;
+
+    // Basic Info
+    doc.setFontSize(10);
+    doc.setTextColor(80, 80, 80);
+    doc.text(`Email: ${user.email}`, 20, yPosition);
+    yPosition += 6;
+    doc.text(`Phone: ${user.phone}`, 20, yPosition);
+    yPosition += 6;
+    doc.text(`Defence ID: ${user.defenceId}`, 20, yPosition);
+    yPosition += 6;
+    doc.text(`Role: ${user.role} | Years of Service: ${user.yearsOfService}`, 20, yPosition);
+    yPosition += 6;
+    doc.text(`Location: ${user.state} | Education: ${user.education}`, 20, yPosition);
+    yPosition += 12;
+
+    // Military Skills Section
+    doc.setFontSize(14);
+    doc.setTextColor(30, 58, 138);
+    doc.text('Military Skills & Experience', 20, yPosition);
+    yPosition += 8;
+
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    const skillsArray = user.skills.split(',').map((s: string) => s.trim());
+    skillsArray.forEach((skill: string) => {
+      doc.text(`• ${skill}`, 25, yPosition);
+      yPosition += 6;
+    });
+    yPosition += 6;
+
+    // Translated Skills Section
+    doc.setFontSize(14);
+    doc.setTextColor(30, 58, 138);
+    doc.text('Translated Civilian Skills', 20, yPosition);
+    yPosition += 8;
+
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    const translatedSkills = SKILL_TRANSLATIONS[user.role] || [];
+    translatedSkills.forEach((skill: string) => {
+      if (yPosition > pageHeight - 20) {
+        doc.addPage();
+        yPosition = 20;
+      }
+      doc.text(`• ${skill}`, 25, yPosition);
+      yPosition += 6;
+    });
+    yPosition += 6;
+
+    // Career Recommendations Section
+    if (yPosition > pageHeight - 40) {
+      doc.addPage();
+      yPosition = 20;
+    }
+
+    doc.setFontSize(14);
+    doc.setTextColor(30, 58, 138);
+    doc.text('Career Recommendations', 20, yPosition);
+    yPosition += 8;
+
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    const careerRecommendations = CAREER_RECOMMENDATIONS[user.role] || [];
+    careerRecommendations.forEach((career: string) => {
+      if (yPosition > pageHeight - 20) {
+        doc.addPage();
+        yPosition = 20;
+      }
+      doc.text(`• ${career}`, 25, yPosition);
+      yPosition += 6;
+    });
+    yPosition += 6;
+
+    // Document Verification Section
+    if (yPosition > pageHeight - 40) {
+      doc.addPage();
+      yPosition = 20;
+    }
+
+    doc.setFontSize(14);
+    doc.setTextColor(30, 58, 138);
+    doc.text('Verified Documents', 20, yPosition);
+    yPosition += 8;
+
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    const documents = [
+      { name: 'Agniveer Service ID', status: 'Verified' },
+      { name: 'Education Certificate', status: 'Verified' },
+      { name: 'Training Certificate', status: 'Verified' },
+      { name: 'Identity Proof', status: 'Verified' }
+    ];
+    documents.forEach((doc_item: any) => {
+      doc.text(`• ${doc_item.name}: ${doc_item.status}`, 25, yPosition);
+      yPosition += 6;
+    });
+
+    // Footer
+    doc.setFontSize(8);
+    doc.setTextColor(150, 150, 150);
+    doc.text(`Generated on ${new Date().toLocaleDateString()} | SkillBridge Platform`, 20, pageHeight - 10);
+
+    // Save PDF
+    doc.save(`${user.name}_Portfolio.pdf`);
+  };
+
   const translatedSkills = SKILL_TRANSLATIONS[user.role] || [];
   const careerRecommendations = CAREER_RECOMMENDATIONS[user.role] || [];
   const examEligibility = EXAM_ELIGIBILITY[user.role] || [];
@@ -110,7 +239,7 @@ export default function DashboardPage() {
                   <Badge className="bg-green-900 text-green-100">Profile Complete</Badge>
                 </div>
               </div>
-              <Button className="bg-white text-blue-600 hover:bg-slate-100">
+              <Button onClick={handleDownloadPortfolio} className="bg-white text-blue-600 hover:bg-slate-100">
                 <Download className="w-4 h-4 mr-2" />
                 Download Portfolio
               </Button>
