@@ -1,4 +1,4 @@
-# v0-skill-bridge-agniveer-platform
+# skill-bridge-agniveer-platform
 
 **Live Website:** [https://AkshatSandhu.github.io/v0-skill-bridge-agniveer-platform/](https://AkshatSandhu.github.io/v0-skill-bridge-agniveer-platform/)
 
