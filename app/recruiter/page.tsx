@@ -123,14 +123,14 @@ const MOCK_JOBS = [
 
 export default function RecruiterPage() {
   const [activeTab, setActiveTab] = useState('candidates');
-  const [searchRole, setSearchRole] = useState('');
-  const [searchLocation, setSearchLocation] = useState('');
+  const [searchRole, setSearchRole] = useState('all');
+  const [searchLocation, setSearchLocation] = useState('all');
   const [selectedCandidate, setSelectedCandidate] = useState<typeof MOCK_CANDIDATES[0] | null>(null);
   const [jobSearch, setJobSearch] = useState('');
 
   const filteredCandidates = MOCK_CANDIDATES.filter(candidate => {
-    const roleMatch = !searchRole || candidate.role === searchRole;
-    const locationMatch = !searchLocation || candidate.location === searchLocation;
+    const roleMatch = searchRole === 'all' || candidate.role === searchRole;
+    const locationMatch = searchLocation === 'all' || candidate.location === searchLocation;
     return roleMatch && locationMatch;
   });
 
@@ -196,7 +196,7 @@ export default function RecruiterPage() {
                         <SelectValue placeholder="All Roles" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Roles</SelectItem>
+                        <SelectItem value="all">All Roles</SelectItem>
                         <SelectItem value="Infantry">Infantry</SelectItem>
                         <SelectItem value="Signals">Signals</SelectItem>
                         <SelectItem value="Logistics">Logistics</SelectItem>
@@ -213,7 +213,7 @@ export default function RecruiterPage() {
                         <SelectValue placeholder="All Locations" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Locations</SelectItem>
+                        <SelectItem value="all">All Locations</SelectItem>
                         <SelectItem value="Delhi">Delhi</SelectItem>
                         <SelectItem value="Bangalore">Bangalore</SelectItem>
                         <SelectItem value="Mumbai">Mumbai</SelectItem>
